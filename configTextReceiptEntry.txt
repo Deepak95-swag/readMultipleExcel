@@ -1,0 +1,3 @@
+Template Filepath = ReceiptEntryTemplate.xlsx
+Unique Id Column Name = Receipt Entry  Id.
+Receipt Details Account Name Unique Id Column Name = Account Unique
