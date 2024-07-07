@@ -23,10 +23,10 @@ def currentExcelPath(file):
     )
     return excelValuePath
 
-def getlistItemIDWithSalesInvoiceID(itemtablevalue_df, salesinvoiceid):
+def getlistItemIDWithSalesInvoiceID(ReceiptEntry_AccountName_itemtablevalue_df, salesinvoiceid):
 
-    filtered_df = itemtablevalue_df[
-        itemtablevalue_df[
+    filtered_df = ReceiptEntry_AccountName_itemtablevalue_df[
+        ReceiptEntry_AccountName_itemtablevalue_df[
             configHandle.getitemIdColumnName("Unique Id Column Name")
         ]
         == salesinvoiceid
@@ -36,6 +36,40 @@ def getlistItemIDWithSalesInvoiceID(itemtablevalue_df, salesinvoiceid):
     aListOfItemIDFilteredWithSalesInvoiceID = filtered_df[
         configHandle.getitemIdColumnName(
             "Receipt Details Account Name Unique Id Column Name"
+        )
+    ].tolist()
+    return aListOfItemIDFilteredWithSalesInvoiceID
+
+def getlist_ReceiptEntry_CC_ItemIDWithSalesInvoiceID(ReceiptEntry_CC_itemtablevalue_df, salesinvoiceid):
+
+    filtered_df = ReceiptEntry_CC_itemtablevalue_df[
+        ReceiptEntry_CC_itemtablevalue_df[
+            configHandle.getitemIdColumnName("Unique Id Column Name")
+        ]
+        == salesinvoiceid
+    ]
+
+    # Extract the itemid values into a list
+    aListOfItemIDFilteredWithSalesInvoiceID = filtered_df[
+        configHandle.getitemIdColumnName(
+            "Receipt Details CC Unique Id column Name"
+        )
+    ].tolist()
+    return aListOfItemIDFilteredWithSalesInvoiceID
+
+def getlist_ReceiptEntry_RP_ItemIDWithSalesInvoiceID(ReceiptEntry_RP_itemtablevalue_df, salesinvoiceid):
+
+    filtered_df = ReceiptEntry_RP_itemtablevalue_df[
+        ReceiptEntry_RP_itemtablevalue_df[
+            configHandle.getitemIdColumnName("Unique Id Column Name")
+        ]
+        == salesinvoiceid
+    ]
+
+    # Extract the itemid values into a list
+    aListOfItemIDFilteredWithSalesInvoiceID = filtered_df[
+        configHandle.getitemIdColumnName(
+            "Receipt Details RP Unique Id column Name"
         )
     ].tolist()
     return aListOfItemIDFilteredWithSalesInvoiceID

@@ -1,3 +1,5 @@
 Template Filepath = ReceiptEntryTemplate.xlsx
 Unique Id Column Name = Receipt Entry  Id.
 Receipt Details Account Name Unique Id Column Name = Account Unique
+Receipt Details CC Unique Id column Name = CC Unique
+Receipt Details RP Unique Id column Name = RP unique
