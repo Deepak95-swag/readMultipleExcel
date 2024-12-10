@@ -1,0 +1,10 @@
+Environment = stage
+Apps URL = http://app-strg.elixirbs.in/app/
+Username = user1@elixir.com
+Password = E@lixir1
+Template Filepath = files/ProductionEntryTemplate.xlsx
+Unique Id Column Name = Prodentid
+Production Details ItemNo Unique Id Column Name = Itemno
+Production Details InputItemno Unique Id column Name = Input Itemno
+Production Details OutputItemno Unique Id column Name = Output Itemno
+License Details = NO

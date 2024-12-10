@@ -8,7 +8,7 @@ import configHandle
 
 def getitemIdColumnName(value):
     # sales Invoice
-        configFilePath = "configTextReceiptEntry.txt"  # Read
+        configFilePath = "configTextProdutionEntry.txt"  # Read
         # getting the data of text file to store in config.
         config = ConfigObj(configFilePath)
         columnName = config[value]
@@ -19,7 +19,7 @@ def currentExcelPath(file):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     excelValuePath = os.path.join(
         current_dir,
-        "ReceiptEntryTemplate.xlsx",
+        "ProductionEntryTemplate.xlsx",
     )
     return excelValuePath
 
@@ -35,7 +35,7 @@ def getlistItemIDWithSalesInvoiceID(ReceiptEntry_AccountName_itemtablevalue_df, 
     # Extract the itemid values into a list
     aListOfItemIDFilteredWithSalesInvoiceID = filtered_df[
         configHandle.getitemIdColumnName(
-            "Receipt Details Account Name Unique Id Column Name"
+            "Production Details ItemNo Unique Id Column Name"
         )
     ].tolist()
     return aListOfItemIDFilteredWithSalesInvoiceID
@@ -52,7 +52,7 @@ def getlist_ReceiptEntry_CC_ItemIDWithSalesInvoiceID(ReceiptEntry_CC_itemtableva
     # Extract the itemid values into a list
     aListOfItemIDFilteredWithSalesInvoiceID = filtered_df[
         configHandle.getitemIdColumnName(
-            "Receipt Details CC Unique Id column Name"
+            "Production Details InputItemno Unique Id column Name"
         )
     ].tolist()
     return aListOfItemIDFilteredWithSalesInvoiceID
@@ -69,7 +69,7 @@ def getlist_ReceiptEntry_RP_ItemIDWithSalesInvoiceID(ReceiptEntry_RP_itemtableva
     # Extract the itemid values into a list
     aListOfItemIDFilteredWithSalesInvoiceID = filtered_df[
         configHandle.getitemIdColumnName(
-            "Receipt Details RP Unique Id column Name"
+            "Production Details OutputItemno Unique Id column Name"
         )
     ].tolist()
     return aListOfItemIDFilteredWithSalesInvoiceID
